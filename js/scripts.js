@@ -50,3 +50,40 @@ console.log("window.screen.widht:"+widht+"px","window.screen.hight:"+height+"px"
 console.log("window.screen.widht:"+window.screen.width+"px","window.screen.hight:"+window.screen.height+"px");
 console.log("window .screen.availWidth :"+window.screen.availWidth+"px","window .screen.availHeight :"+window.screen.availHeight+"px" );
 console.log("document.body.clientWidth:"+document.body.clientWidth+"px","document.body.clientHeight :"+document.body.clientHeight+"px");
+
+function calcular (psumando,ssumando, salida){
+    
+    //se capturan los valores
+    primerSumando = document.getElementById(psumando);
+    segundoSumando= document.getElementById(ssumando);
+    
+    //se realiza el calculo
+    //agregar siempre el ".value" en java nativo
+    let calculo = parseFloat(primerSumando.value) + parseFloat (segundoSumando.value);
+    
+    //se asigna el valor al campo de la salida
+    document.getElementById(salida).innerHTML = calculo
+}
+
+function crearElemento(url = null){
+    if ( url !== null){
+        url = url;
+    }
+    else{
+        url ="https://as2.ftcdn.net/jpg/01/09/00/83/220_F_109008395_OQDupHMza1V6CNOzrJwWAKlaktT4IsRW.jpg";
+    }
+
+    let objetoimagen = document.createElement("img");
+    objetoimagen.id = "imagencreada";
+    objetoimagen.src = url;
+    objetoimagen.alt = "Icono sobre control de videojuegos";
+    objetoimagen.title ="Contrl de Videojuegios";
+    objetoimagen.width = 220;
+    objetoimagen.height= 165;
+    objetoimagen.addEventListener('click', function(){
+        objetoimagen.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkU5595AC-bbsoPF-Ik0WzUbVj9rnAbs9lkw&s";
+        objetoimagen.width =225;
+        objetoimagen.height = 225;   
+    });
+    document.getElementById('lienzo').appendChild(objetoimagen);
+}
